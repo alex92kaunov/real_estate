@@ -1,0 +1,53 @@
+.viewContentBox  {
+    width: 1000px;
+    height: 800px;
+    margin: auto auto 200px auto;
+}
+.viewHeader {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    height: 80px;
+    width: 1000px;
+}
+.headerStyle    {
+    margin-left: 30px;
+}
+.complexName    {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.viewDescription    {
+    display: flex;
+    margin-top: 10px;
+}
+.priceItem  {
+   margin: auto;
+}
+.photo  {
+    display: flex;
+    flex-wrap: wrap;
+    height: 500px;
+}
+.cell_Style  {
+    text-align: left;
+    vertical-align: middle;
+    padding-right: 15px;
+    font-size: 1.1em;
+    color: teal;
+}
+.color_font {
+    color:black;
+}
+.containerButton    {
+    margin: auto;
+}
+.btnStyle   {
+    height: 80px;
+    width: 270px;
+}
+.btnStyle:hover   {
+    font-size: 1.8em;
+}
+.h4StyleHeader  {
+    margin: 10px 0 30px 0;
+}

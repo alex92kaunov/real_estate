@@ -1,0 +1,34 @@
+.filter {
+    margin-top: 530px;
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+}
+.searchForm {
+    background-color: #00ADEF;
+    border-radius: 30px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+.searchElement {
+    margin-bottom: 10px;
+}
+label {
+    color: 	#ffffff;
+    font-family: Square;
+    font-size: 20px;
+}
+select {
+    color: 	#ffffff;
+    font-family: Square;
+    font-size: 20px;
+}
+.btnSearch  {
+    display: flex;
+    justify-content: center;
+    padding-right: 20px;
+    padding-top: 10px;
+}

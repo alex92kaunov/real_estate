@@ -1,0 +1,61 @@
+.itemBlock  {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+a {
+    list-style-type: none;		/* Убираем маркеры */
+}
+.itemBox  {
+    width: 240px;
+    height: 320px;
+    border: 1px solid #DADADA;
+    margin-left: 10px;
+    margin-top: 10px;
+    padding: 2px;
+    border-radius: 10px;
+}
+.itemBox:hover   {
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+
+}
+.imgItem {
+    width: 234px;
+    height: 170px;
+    border-radius: 10px 10px 0 0;
+}
+.nameItem   {
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-bottom: 1px;
+    color: darkslateblue;
+}
+.priceP {
+    display: flex;
+    justify-content: center;
+    color: black;
+    font-size: 20px;
+    margin-top: 1px;
+    padding-top: 1px;
+}
+.hrStyle    {
+    margin: 0;
+}
+.addressItem{
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 10px;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-bottom: 0;
+    padding-top: 0;
+}
+.addressItem {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5px;
+    font-size: 14px;
+    color: teal;
+}
