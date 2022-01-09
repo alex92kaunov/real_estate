@@ -30,10 +30,12 @@ class Filter extends React.Component {
     }
 
     changeComplexSelect = (e) => {
-        this.setState({filter: {...this.state.filter, complexValue: e.target.value}})
+        let value = e.target.value > 0 ? e.target.value : null;
+        this.setState({filter: {...this.state.filter, complexValue: value}})
     }
     changeDeveloperSelect = (e) => {
-        this.setState({filter: {...this.state.filter, developerValue: e.target.value}})
+        let value = e.target.value > 0 ? e.target.value : null;
+        this.setState({filter: {...this.state.filter, developerValue: value}})
     }
 
     changePriceSelectFrom = (e) => {
@@ -70,6 +72,7 @@ class Filter extends React.Component {
                      <Col className="searchElement">
                          <Form.Label htmlFor="disabledTextInput">Комплекс</Form.Label>
                          <Form.Select id="numberOfRooms" aria-label="Комплекс" onChange={this.changeComplexSelect}>
+                             <option value={0}>Любой</option>
                              {this.state.complexList.map(item => {
                                  return (
                                      <option key={item.id} value={item.id}>{item.nameComplex}</option>
@@ -80,6 +83,7 @@ class Filter extends React.Component {
                      <Col>
                          <Form.Label htmlFor="disabledTextInput">Застройщик</Form.Label>
                          <Form.Select id="numberOfRooms" aria-label="Default select example" onChange={this.changeDeveloperSelect}>
+                             <option value={0}>Любой</option>
                              {this.state.developerList.map(item => {
                                  return (
                                      <option key={item.id} value={item.id}>{item.nameDeveloper}</option>
