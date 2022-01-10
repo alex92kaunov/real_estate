@@ -7,56 +7,43 @@ class ModalForm extends React.Component {
         super(props);
         this.state = {}
     }
-
     //-----------------Блок функций сохраняюх значения измененных полей-------------------------------------
-
     onChangeComplexForm = (e) => {
-        let complex = {...this.props.changeItem.complex, nameComplex: e.target.value}
+        let complex = {...this.props.changeItem.complex, nameComplex: e.target.value};
         this.props.setParentState({item: {...this.props.changeItem, complex: complex}});
     }
-
     onChangeDeveloperForm = (e) =>  {
-        let developer = {...this.props.changeItem.developer, nameDeveloper: e.target.value}
+        let developer = {...this.props.changeItem.developer, nameDeveloper: e.target.value};
         this.props.setParentState({item: {...this.props.changeItem, developer: developer}});
     }
-
     onChangeAddressForm = (e) =>    {
         this.props.setParentState({item: {...this.props.changeItem, address: e.target.value}});
     }
-
     onChangeRoomsForm = (e) =>    {
         this.props.setParentState({item: {...this.props.changeItem, rooms: e.target.value}});
     }
-
     onChangeAreaForm = (e) =>    {
         this.props.setParentState({item: {...this.props.changeItem, area: e.target.value}});
     }
-
     onChangeTypeForm = (e) =>   {
         this.props.setParentState({item: {...this.props.changeItem, type: e.target.value}});
     }
-
     onChangeDealForm = (e) =>   {
         this.props.setParentState({item: {...this.props.changeItem, deal: e.target.value}});
     }
-
     onChangeHistoryForm = (e) => {
         this.props.setParentState({item: {...this.props.changeItem, history: e.target.value}});
     }
-
     onChangePriceForm = (e) =>  {
         this.props.setParentState({item: {...this.props.changeItem, price: e.target.value}});
     }
-
     onChangeTeleForm = (e) =>  {
         this.props.setParentState({item: {...this.props.changeItem, tele: e.target.value}});
     }
-
     onChangeSpecificationForm = (e) =>  {
         this.props.setParentState({item: {...this.props.changeItem, specification: e.target.value}});
     }
-    //-------------------------------------------------------------------------------------------------------
-
+    //------------------------------------------------------------------------------------------------------
     save = () => {
         let idElement = this.props.changeItem.id
         this.props.saveElement(idElement)
@@ -64,7 +51,6 @@ class ModalForm extends React.Component {
 
     render () {
         return (
-
             <Modal {...this.props} aria-labelledby="contained-modal-title-vcenter">
                 <Modal.Header closeButton>
                     <Modal.Title id="contained-modal-title-vcenter">

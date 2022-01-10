@@ -1,6 +1,6 @@
 import React from "react";
 import './Footer.css'
-import {Form, Button} from "react-bootstrap";
+import {Form} from "react-bootstrap";
 
 function Footer () {
     return (
@@ -28,7 +28,6 @@ function Footer () {
                 <h4 className="footerH4">Оставайся на связи</h4>
                 <ul>
                     <a href=""><li>г. Москва</li></a>
-                    <a href=""><li>ООО "Property For Sale"</li></a>
                     <a href=""><li>+7800-888-25-62</li></a>
                 </ul>
                 <Form>

@@ -13,19 +13,18 @@ class ItemBlock extends React.Component {
     componentDidMount() {
         let dataItem = localStorage.getItem('data');
         if (dataItem != null) {
-            this.setState({listItems: JSON.parse(dataItem)})
+            this.setState({listItems: JSON.parse(dataItem)});
         }
         else    {
             this.setState({listItems: mockData});
             localStorage.setItem('data', JSON.stringify(mockData));
         }
     }
-
     getData = (filter) =>   {
         if (Object.keys(filter).length === 0) { //проверил на пустой объект
             let listData = localStorage.getItem('data');
             if (listData != null) {
-                this.setState({listItems: JSON.parse(listData)})
+                this.setState({listItems: JSON.parse(listData)});
             }
         }
         else {
@@ -39,9 +38,11 @@ class ItemBlock extends React.Component {
                     if (filter.developerValue != null)
                         condition = condition && itemEl.developer.id === Number(filter.developerValue);
                     if (filter.priceFromValue != null && filter.priceBeforeValue != null)
-                        condition = condition && itemEl.price >= Number(filter.priceFromValue)  && itemEl.price <= Number(filter.priceBeforeValue)
+                        condition = condition && itemEl.price >= Number(filter.priceFromValue)
+                            && itemEl.price <= Number(filter.priceBeforeValue);
                     if (filter.areaFromValue != null && filter.areaBeforeValue != null) {
-                        condition = condition && itemEl.area >= Number(filter.areaFromValue)  && itemEl.area <= Number(filter.areaBeforeValue)
+                        condition = condition && itemEl.area >= Number(filter.areaFromValue)
+                            && itemEl.area <= Number(filter.areaBeforeValue);
                     }
                     return condition
                 })

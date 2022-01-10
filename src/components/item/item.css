@@ -6,7 +6,7 @@
     margin-right: auto;
 }
 a {
-    list-style-type: none;		/* Убираем маркеры */
+    list-style-type: none;
 }
 .itemBox  {
     width: 240px;
@@ -19,7 +19,6 @@ a {
 }
 .itemBox:hover   {
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
-
 }
 .imgItem {
     width: 234px;

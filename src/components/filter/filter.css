@@ -1,17 +1,11 @@
 .filter {
-    margin-top: 530px;
     width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 30px;
+    margin: 530px auto 30px auto;
 }
 .searchForm {
     background-color: #00ADEF;
     border-radius: 30px;
-    padding-top: 10px;
-    padding-bottom: 15px;
-    padding-right: 20px;
-    padding-left: 20px;
+    padding: 10px 20px 15px 20px;
 }
 .searchElement {
     margin-bottom: 10px;

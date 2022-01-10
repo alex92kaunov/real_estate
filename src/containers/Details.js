@@ -15,7 +15,6 @@ function DetailsItem () {
         const fetchData = async () => {
             let dataItem = localStorage.getItem('data');
             let dataBase = JSON.parse(dataItem);
-
             let result = dataBase.find( function (item) {
                 return item.id === Number(id);
             });
@@ -56,10 +55,8 @@ function DetailsItem () {
                         </Carousel.Item>
                     </Carousel>
                 </div>
-
                 <h4 className="h4StyleHeader">О квартире</h4>
                 <div className="viewDescription">
-
                     <table>
                         <tr>
                             <td className="cell_Style">Застройщик:</td>
@@ -107,5 +104,3 @@ function DetailsItem () {
 }
 export default DetailsItem;
 
-//{selectedItem ? selectedItem.developer.nameDeveloper : ''}
-//{selectedItem ? selectedItem.complex.nameComplex : ''}

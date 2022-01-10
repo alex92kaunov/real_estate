@@ -3,7 +3,6 @@ import './filter.css'
 import {Form, Button, Row, Col} from "react-bootstrap";
 import {complexData} from "../../helpers/Complex";
 import {developerData} from "../../helpers/Developer";
-import Item from "../item/Item";
 
 class Filter extends React.Component {
    constructor(props) {
@@ -28,37 +27,30 @@ class Filter extends React.Component {
        //Имитация запроса на сервер
        this.setState({complexList: complexData, developerList: developerData});
     }
-
     changeComplexSelect = (e) => {
         let value = e.target.value > 0 ? e.target.value : null;
-        this.setState({filter: {...this.state.filter, complexValue: value}})
+        this.setState({filter: {...this.state.filter, complexValue: value}});
     }
     changeDeveloperSelect = (e) => {
         let value = e.target.value > 0 ? e.target.value : null;
-        this.setState({filter: {...this.state.filter, developerValue: value}})
+        this.setState({filter: {...this.state.filter, developerValue: value}});
     }
-
     changePriceSelectFrom = (e) => {
        if (!isNaN(e.target.value))
            this.setState({filter: {...this.state.filter, priceFromValue: e.target.value}});
     }
-
-
-
     changePriceSelectBefore = (e) => {
         if (!isNaN(e.target.value))
-            this.setState({filter: {...this.state.filter, priceBeforeValue: e.target.value}})
+            this.setState({filter: {...this.state.filter, priceBeforeValue: e.target.value}});
     }
     changeAreaFrom = (e) =>{
         if (!isNaN(e.target.value))
             this.setState({filter: {...this.state.filter, areaFromValue: e.target.value}})
     }
-
     changeAreaBefore = (e) =>{
         if (!isNaN(e.target.value))
             this.setState({filter: {...this.state.filter, areaBeforeValue: e.target.value}});
     }
-
     btnFind = () => {
        this.props.getData(this.state.filter);
     }
@@ -71,7 +63,8 @@ class Filter extends React.Component {
                  <Row>
                      <Col className="searchElement">
                          <Form.Label htmlFor="disabledTextInput">Комплекс</Form.Label>
-                         <Form.Select id="numberOfRooms" aria-label="Комплекс" onChange={this.changeComplexSelect}>
+                         <Form.Select id="numberOfRooms" aria-label="Комплекс"
+                                      onChange={this.changeComplexSelect}>
                              <option value={0}>Любой</option>
                              {this.state.complexList.map(item => {
                                  return (
@@ -82,7 +75,8 @@ class Filter extends React.Component {
                      </Col>
                      <Col>
                          <Form.Label htmlFor="disabledTextInput">Застройщик</Form.Label>
-                         <Form.Select id="numberOfRooms" aria-label="Default select example" onChange={this.changeDeveloperSelect}>
+                         <Form.Select id="numberOfRooms" aria-label="Default select example"
+                                      onChange={this.changeDeveloperSelect}>
                              <option value={0}>Любой</option>
                              {this.state.developerList.map(item => {
                                  return (
@@ -92,7 +86,6 @@ class Filter extends React.Component {
                          </Form.Select>
                      </Col>
                  </Row>
-
                  <Row>
                      <Col className="searchElement">
                          <Form.Label htmlFor="disabledTextInput">Площадь от</Form.Label>
@@ -102,7 +95,6 @@ class Filter extends React.Component {
                          <Form.Label htmlFor="disabledTextInput">Площадь до</Form.Label>
                          <Form.Control id="disabledTextInput" onChange={this.changeAreaBefore}/>
                      </Col>
-
                      <Col className="searchElement">
                          <Form.Label htmlFor="disabledTextInput">Цена от</Form.Label>
                          <Form.Control id="disabledTextInput" onChange={this.changePriceSelectFrom}/>

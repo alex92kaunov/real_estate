@@ -6,7 +6,6 @@ import './Admin.css'
 import {compareArraysAsSet} from "@testing-library/jest-dom/dist/utils";
 import {Link} from "react-router-dom";
 
-
 class Admin extends React.Component {
     constructor(props) {
         super(props);
@@ -41,14 +40,13 @@ class Admin extends React.Component {
     componentDidMount() {
         let dataItem = localStorage.getItem('data');
         if (dataItem != null) {
-            this.setState({mockData: JSON.parse(dataItem)})
+            this.setState({mockData: JSON.parse(dataItem)});
         }
         else    {
             this.setState({mockData: mockData});
             localStorage.setItem('data', JSON.stringify(mockData));
         }
     }
-
     onUpdateClick   = (e) => {
         let findId = Number(e.target.dataset.id);
         let dataBase = [...this.state.mockData];
@@ -56,14 +54,12 @@ class Admin extends React.Component {
             return item.id === findId;
         });
         if (result) {
-            this.setState({item: result, viewModal: true})
+            this.setState({item: result, viewModal: true});
         }
     }
-
     onHide = (view) => {
-        this.setState({viewModal: view})
+        this.setState({viewModal: view});
     }
-
     buttonDelete = (e)=> {
         let findId = e.target.dataset.id;
         let arrayMas = [...this.state.mockData];
@@ -77,14 +73,11 @@ class Admin extends React.Component {
             localStorage.setItem('data', JSON.stringify(this.state.mockData))
         })
     }
-
     setParentState = (state={},callback) => {
-        this.setState(state, callback)
+        this.setState(state, callback);
     }
-
     saveElement = (id) => {
         let arrayMas = [...this.state.mockData];
-
         if (id && id > 0) {
             for (let i = 0; i < arrayMas.length; i++) {
                 if (Number(id) === Number(arrayMas[i].id)) {
@@ -101,11 +94,9 @@ class Admin extends React.Component {
                 localStorage.setItem('data', JSON.stringify(this.state.mockData))});
         }
     }
-
-    onConsoleLog = () =>    {
+    onClearLoc = () =>    {
         localStorage.clear();
     }
-
     render()
     {
         return (
@@ -119,7 +110,7 @@ class Admin extends React.Component {
                     <h1>База данных:</h1>
                     <div className="buttonWrapper">
                         <Button onClick={() => {this.onHide(true)}} variant="outline-primary">Создать</Button>
-                        <Button  onClick={this.onConsoleLog} variant="outline-secondary">Очистить localStorage</Button>
+                        <Button  onClick={this.onClearLoc} variant="outline-secondary">Очистить localStorage</Button>
                     </div>
                 </div>
                 <Table striped bordered hover>
@@ -178,84 +169,3 @@ class Admin extends React.Component {
     }
 }
 export default Admin;
-
-
-
-//----------------первый вариант--------------------
-// saveElement = (id) => {
-//     let arrayMas = [...this.state.mockData];
-//     for (let i = 0; i < arrayMas.length; i++) {
-//         if (Number(id) === Number(arrayMas[i].id)) {
-//             arrayMas[i] = this.state.item
-//             break;
-//         }
-//     }
-//     this.setState({mockData: arrayMas, viewModal: false}, function () {
-//         localStorage.setItem('data', JSON.stringify(this.state.mockData))
-//     })
-// }
-//------------------------------------------------------------------------
-
-
-
-
-
-//----------------------------Второй вариант------------------------------------
-// saveElement = (id) => {
-//     let arrayMas = [...this.state.mockData];
-//     for (let i = 0; i < arrayMas.length; i++) {
-//         if (Number(id) === Number(arrayMas[i].id)) {
-//             arrayMas[i] = this.state.item
-//             break;
-//         }
-//     }
-//     this.setState({mockData: arrayMas, viewModal: false}, function () {
-//         localStorage.setItem('data', JSON.stringify(this.state.mockData))});
-//
-//
-//     let x=false;
-//     for (let i = 0; i < arrayMas.length; i++) {
-//         if (Number(id) === Number(arrayMas[i].id)) {
-//             x = true;
-//             break;
-//         }
-//     }
-//     if (x !== true) {
-//         arrayMas.push(this.state.item);
-//         this.setState({mockData: arrayMas, viewModal: false}, function () {
-//             localStorage.setItem('data', JSON.stringify(this.state.mockData))});
-//     }
-//
-//     console.log(x);
-//
-// }
-//------------------------------------------------------------------------------------
-
-//------------------------Третий вариант---------------------------------------------
-// saveElement = (id) => {
-//     let arrayMas = [...this.state.mockData];
-//     let foundElementState = false;
-//     let x = Number(id);
-//     //console.log(x);
-//
-//     for (let i = 0; i < arrayMas.length; i++) {
-//         if (Number(id) === Number(arrayMas[i].id)) {
-//             arrayMas[i] = this.state.item;
-//             foundElementState = true;
-//             break;
-//         }
-//     }
-//     if (foundElementState !== true) {
-//         this.setState({item: {...this.state.item, id: x}});
-//
-//         arrayMas.push(this.state.item);
-//         console.log(arrayMas);
-//         this.setState({mockData: arrayMas, viewModal: false}, function () {
-//             localStorage.setItem('data', JSON.stringify(this.state.mockData))});
-//     }
-//     else {
-//         console.log('Не зашел в if');
-//         this.setState({mockData: arrayMas, viewModal: false}, function () {
-//             localStorage.setItem('data', JSON.stringify(this.state.mockData))});
-//     }
-// }

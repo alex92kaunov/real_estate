@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState} from 'react';
 import './item.css'
 import picktureItem1 from '../../assets/img/property-1/property1.jpg'
 import {Link} from "react-router-dom";
-import Details from "../../containers/Details";
 
 function Item (props) {
     const [sendId, setSendId] = useState(0);

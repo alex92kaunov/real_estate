@@ -18,16 +18,13 @@ function Header () {
             <Carousel.Item className="sliderItem">
                 <img className="d-block w-100" src={imgHeader1} alt="First slide"/>
                 <Carousel.Caption>
-                    <h3>Более 1117 город по всей России</h3>
-                    <p>Property For Sale</p>
+                    <h3>Более 117 город по всей России</h3>
                 </Carousel.Caption>
             </Carousel.Item>
-
             <Carousel.Item className="sliderItem">
                 <img className="d-block w-100" src={imgHeader2} alt="Second slide"/>
                 <Carousel.Caption>
                     <h3>Элитная недвижимость</h3>
-                    <p>Property For Sale</p>
                 </Carousel.Caption>
             </Carousel.Item>
 
@@ -35,12 +32,10 @@ function Header () {
                 <img className="d-block w-100" src={imgHeader3} alt="Third slide"/>
                 <Carousel.Caption>
                     <h3>Доступно всем</h3>
-                    <p>Property For Sale</p>
                 </Carousel.Caption>
             </Carousel.Item>
         </Carousel>
         </div>
     );
 }
-
 export default Header;
